@@ -171,9 +171,9 @@ public class SwiftFitKitPlugin: NSObject, FlutterPlugin {
 
     private func readSource(sample: HKSample) -> String {
         if #available(iOS 9, *) {
-            return sample.sourceRevision.source.name;
-        }
+                   return (sample.device?.model)!;
+               }
 
-        return sample.source.name;
+           return sample.source.name;
     }
 }
